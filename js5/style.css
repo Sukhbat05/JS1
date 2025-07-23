@@ -1,0 +1,16 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 100px;
+  background-color: aquamarine;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  gap: 3px;
+}
+
+.size {
+  background-color: aqua;
+  text-align: center;
+}

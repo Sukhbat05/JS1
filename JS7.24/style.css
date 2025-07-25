@@ -1,0 +1,15 @@
+.conversation {
+  width: 500px;
+  height: 50vh;
+  background-color: rgb(227, 226, 226);
+  border: solid 1px gray;
+  border-radius: 10px;
+  position: relative;
+}
+.bottom {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  bottom: 10px;
+  left: 10px;
+}

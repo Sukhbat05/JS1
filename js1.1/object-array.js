@@ -1,8 +1,8 @@
 let students = [
   { name: "boldoo", age: 20, grade: 20, balance: 30000, gender: "male" },
-  { name: "dorjoo", age: 31, grade: 30, balance: 20000, gender: "male" },
+  { name: "dorjoo", age: 31, grade: 30, balance: 9000, gender: "male" },
   { name: "tsetsgee", age: 30, grade: 100, balance: 15000, gender: "female" },
-  { name: "bataa", age: 10, grade: 50, balance: 10000, gender: "male" },
+  { name: "bataa", age: 10, grade: 50, balance: 5000, gender: "male" },
 ];
 
 function findTopStudents(arr) {
@@ -101,3 +101,62 @@ function findFemalePercent(arr) {
   return percent;
 }
 console.log(findFemalePercent(students), "%");
+
+const findBottomStudent = (arr) => {
+  let BottomStudent = arr[0];
+  for (i = 0; i < arr.length; i++) {
+    if (BottomStudent.grade > arr[i].grade) {
+      BottomStudent = arr[i];
+    }
+  }
+  return BottomStudent;
+};
+console.log(findBottomStudent(students));
+
+const findChildArray = (arr) => {
+  let ChildArray = [];
+  let count = 0;
+  for (i = 0; i < arr.length; i++) {
+    if (arr[i].age < 18) {
+      ChildArray[count] = arr[i];
+      count++;
+    }
+  }
+  return ChildArray;
+};
+console.log(findChildArray(students));
+
+const findSumOfGrade = (arr) => {
+  let sum = 0;
+  for (i = 0; i < arr.length; i++) {
+    sum = sum + arr[i].grade;
+  }
+  return sum;
+};
+
+console.log(findSumOfGrade(students));
+
+const findStudentsByName = (arr, name) => {
+  for (i = 0; i < arr.length; i++) {
+    if (arr[i].name === name) {
+      return arr[i];
+    }
+  }
+};
+console.log(findStudentsByName(students, "boldoo"));
+
+const richStudentsBalance = (arr) => {
+  let richBalance = [];
+  let count = 0;
+  for (i = 0; i < arr.length; i++) {
+    if (arr[i].balance > 10000) {
+      richBalance[count] = {
+        name: arr[i].name,
+        balance: arr[i].balance,
+      };
+      count++;
+    }
+  }
+  return richBalance;
+};
+console.log(richStudentsBalance(students));

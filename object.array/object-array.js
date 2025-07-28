@@ -160,3 +160,8 @@ const richStudentsBalance = (arr) => {
   return richBalance;
 };
 console.log(richStudentsBalance(students));
+
+let whoSum = [2, 7 , 11 ,15 ]
+
+
+

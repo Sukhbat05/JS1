@@ -315,9 +315,36 @@ console.log(addFinalPrice(data))
    console.log(getTotalStock(data))
 
    //bodlogo12
- 
-
-  
     
- 
- 
+  const getTotalPrice= (products) => {
+    let totalprice = 0;
+    products.forEach((product)=>{
+      totalprice = totalprice + product.price
+
+    })
+    return totalprice;
+  }
+  console.log(getTotalPrice(data))
+  
+
+  //bodlogo13
+
+  const filterBySupplier = (products, supplierName) =>{
+     const BySupplier = products.filter((product)=>{
+        return product.supplier == supplierName
+    })
+    return BySupplier;
+  }
+  console.log(filterBySupplier(data, "MobiCom"))
+
+  //bodlogo14 
+
+  const getProductNames= (products) => {
+    const ProductNames = products.map((product)=>{
+      return product.name 
+
+    })
+    return ProductNames
+  }
+  console.log(getProductNames(data))
+  

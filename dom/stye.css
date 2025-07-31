@@ -1,0 +1,64 @@
+#car-list {
+  display: flex;
+}
+.card {
+  margin-top: 60px;
+  margin-left: 15px;
+  width: 300px;
+  height: 450px;
+  border: 3px gray solid;
+  border-radius: 12px;
+  padding: 10px 5px;
+  box-sizing: border-box;
+  position: relative;
+  background-color: rgb(250, 235, 215, 0.6);
+  overflow: scroll;
+  scroll-snap-type: x mandatory;
+}
+.card-title {
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+  gap: 10px;
+  line-height: 0;
+  font-weight: bold;
+}
+.carPrice {
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  color: darkslateblue;
+}
+.card-description {
+  display: flex;
+  gap: 5px;
+  /* color: gray; */
+  color: #3f3f3f;
+  position: absolute;
+  top: 300px;
+  /* bottom: 20px; */
+  left: 15px;
+  flex-wrap: wrap;
+  line-height: 0;
+}
+.carImage {
+  width: 300px;
+  position: absolute;
+  top: 100px;
+  display: flex;
+}
+.carSupplier {
+  font-weight: bold;
+}
+.carMileage {
+  font-weight: bold;
+  color: blue;
+}
+.carType {
+  color: cadetblue;
+}
+.carAvailability {
+  color: brown;
+}

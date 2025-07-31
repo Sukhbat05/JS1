@@ -1,6 +1,5 @@
 // Нэг л products массив дээр ажиллана
 
-
 // // 1. Хямдралтай бүтээгдэхүүнүүдийг шүүж буцаадаг функц бич.
 // function getDiscountedProducts(products) {
 //   // ...
@@ -164,187 +163,235 @@ let data = [
   },
 ];
 
+//Bodlogo1
 
-//Bodlogo1 
+const getDiscountedProducts1 = (products) => {
+  const DiscountedProducts = products.filter((product) => {
+    return product.discountPercent > 0;
+  });
+  return DiscountedProducts;
+};
+console.log(getDiscountedProducts1(data));
 
-const getDiscountedProducts1 = (products) =>{
-    const DiscountedProducts = products.filter((product)=> {
-      return product.discountPercent > 0 
-    })
-    return DiscountedProducts;
-
-}
-console.log(getDiscountedProducts1(data))
-
-
-console.log("=================")
+console.log("=================");
 
 //bodlogo2
 
 const getOutOfStockProducts = (products) => {
-  const OutOfStock = products.filter((product)=>{
-    return product.stock ==0 
+  const OutOfStock = products.filter((product) => {
+    return product.stock == 0;
+  });
+  return OutOfStock;
+};
+console.log(getOutOfStockProducts(data));
 
-  })
-  return OutOfStock
-
-}
-console.log(getOutOfStockProducts(data))
-
-
-console.log("====================")
+console.log("====================");
 
 //boldogo3
 
 const getExpensiveProducts = (products, une) => {
-  const ExpensiveProducts = products.filter((product)=>{
-    return product.price > une
-  })
-  return ExpensiveProducts
-}
-console.log(getExpensiveProducts(data, 1000000))
+  const ExpensiveProducts = products.filter((product) => {
+    return product.price > une;
+  });
+  return ExpensiveProducts;
+};
+console.log(getExpensiveProducts(data, 1000000));
 
-console.log("=========================")
+console.log("=========================");
 
-//bodlogo4 
+//bodlogo4
 
-const getComputers= (products, com) => {
-  const Computers1 = products.filter((product)=>{
-    return product.category == com
-  })
-  return Computers1
-}
-console.log(getComputers(data, "Computers"))
+const getComputers = (products, com) => {
+  const Computers1 = products.filter((product) => {
+    return product.category == com;
+  });
+  return Computers1;
+};
+console.log(getComputers(data, "Computers"));
 
+console.log("=========================");
 
-console.log("=========================")
-
-
-//boldogo5 
-const filterByBrand = (products, brandName) =>{
-  const FindBrand = products.filter((product)=>{
-    return product.brand ==brandName
-    
-  })
+//boldogo5
+const filterByBrand = (products, brandName) => {
+  const FindBrand = products.filter((product) => {
+    return product.brand == brandName;
+  });
   return FindBrand;
-}
-console.log(filterByBrand(data, "Apple"))
+};
+console.log(filterByBrand(data, "Apple"));
 
-console.log("=============================")
+console.log("=============================");
 
 //bodlogo6
 const addIsHeaveFlag = (products) => {
-     products.map((product)=>{
-    if (product.weight > 1)
-    {
-      product.isheavy = true ;
+  products.map((product) => {
+    if (product.weight > 1) {
+      product.isheavy = true;
     } else {
       product.isheavy = false;
     }
-
-  })
+  });
   return products;
-}
-console.log("6",addIsHeaveFlag(data))
+};
+console.log("6", addIsHeaveFlag(data));
 
 //bodlogo7
 
 const increasePriceByTenPercent = (products) => {
-  const TenPercent = products.map((product)=>{
-     return {...product,
-     price: product.price + (product.price/100 *10)}
-    
-  })
+  const TenPercent = products.map((product) => {
+    return { ...product, price: product.price + (product.price / 100) * 10 };
+  });
   return TenPercent;
-}
-console.log("7",increasePriceByTenPercent(data))
+};
+console.log("7", increasePriceByTenPercent(data));
 
 //bodlogo8
 
-
-
-
-
-const addFinalPrice= (products) =>{
+const addFinalPrice = (products) => {
   const newData = products.map((product) => {
-    const finalPrice = product.price - (product.price / 100 * product.discountPercent);
-    return {...product,
-      finalprice1: product.finalPrice = finalPrice}
-  })
-  return newData
-}
-console.log(addFinalPrice(data))
+    const finalPrice =
+      product.price - (product.price / 100) * product.discountPercent;
+    return { ...product, finalprice1: (product.finalPrice = finalPrice) };
+  });
+  return newData;
+};
+console.log(addFinalPrice(data));
 
-//bodlogo9 
- const getTopRatedProduct= (products) => {
-    let max = products[0];
+//bodlogo9
+const getTopRatedProduct = (products) => {
+  let max = products[0];
 
-   products.filter((product)=>{
-    if (product.rating> max.rating) {
-      max = product
+  products.filter((product) => {
+    if (product.rating > max.rating) {
+      max = product;
     }
-   })
-   return max;
- }
- console.log("9",getTopRatedProduct(data))
+  });
+  return max;
+};
+console.log("9", getTopRatedProduct(data));
 
- //bodlogo10 
+//bodlogo10
 
- const getCheapestProduct= (products) =>{
+const getCheapestProduct = (products) => {
   let minprice = products[0];
-    products.filter((product)=>{
-      if(product.price < minprice.price) {
-        minprice = product
-      }
-    })
-    return minprice
+  products.filter((product) => {
+    if (product.price < minprice.price) {
+      minprice = product;
+    }
+  });
+  return minprice;
+};
 
-    
- }
+console.log("10", getCheapestProduct(data));
 
- console.log("10", getCheapestProduct(data))
+//bodlogo11
+const getTotalStock = (products) => {
+  let totalstock = 0;
+  products.forEach((product) => {
+    totalstock = totalstock + product.stock;
+  });
+  return totalstock;
+};
+console.log(getTotalStock(data));
 
- //bodlogo11 
- const  getTotalStock= (products) =>{
-   let totalstock = 0;
-   products.forEach((product)=>{
-      totalstock = totalstock + product.stock
-   })
-   return totalstock
-   }
-   console.log(getTotalStock(data))
+//bodlogo12
 
-   //bodlogo12
-    
-  const getTotalPrice= (products) => {
-    let totalprice = 0;
-    products.forEach((product)=>{
-      totalprice = totalprice + product.price
+const getTotalPrice = (products) => {
+  let totalprice = 0;
+  products.forEach((product) => {
+    totalprice = totalprice + product.price;
+  });
+  return totalprice;
+};
+console.log(getTotalPrice(data));
 
-    })
-    return totalprice;
-  }
-  console.log(getTotalPrice(data))
-  
+//bodlogo13
 
-  //bodlogo13
+const filterBySupplier = (products, supplierName) => {
+  const BySupplier = products.filter((product) => {
+    return product.supplier == supplierName;
+  });
+  return BySupplier;
+};
+console.log(filterBySupplier(data, "MobiCom"));
 
-  const filterBySupplier = (products, supplierName) =>{
-     const BySupplier = products.filter((product)=>{
-        return product.supplier == supplierName
-    })
-    return BySupplier;
-  }
-  console.log(filterBySupplier(data, "MobiCom"))
+//bodlogo14
 
-  //bodlogo14 
+const getProductNames = (products) => {
+  const ProductNames = products.map((product) => {
+    return product.name;
+  });
+  return ProductNames;
+};
+console.log(getProductNames(data));
 
-  const getProductNames= (products) => {
-    const ProductNames = products.map((product)=>{
-      return product.name 
+//bodlogo15
 
-    })
-    return ProductNames
-  }
-  console.log(getProductNames(data))
-  
+const sortByPriceAscending = (products) => {
+  const filtered = products.sort((product2, product1) => {
+    return product2.price - product1.price;
+  });
+  return filtered;
+};
+
+console.log("15", sortByPriceAscending(data));
+
+//bodlogo16
+
+const getLowStockProducts = (products) => {
+  const LowStockProduct = products.filter((product) => {
+    return product.stock <= 5;
+  });
+  return LowStockProduct;
+};
+console.log("16", getLowStockProducts(data));
+
+//bodlogo17
+
+function getUniqueSuppliers(products) {
+  let arrSuppliers = products.map((product) => {
+    return product.supplier;
+  });
+  let uniqueSuppliers = [];
+  arrSuppliers.forEach((supplier) => {
+    if (uniqueSuppliers.includes(supplier)) {
+    } else {
+      uniqueSuppliers.push(supplier);
+    }
+  });
+  return uniqueSuppliers;
+}
+const resultUniqueSuppliers = getUniqueSuppliers(data);
+console.log("Array Of Unique Suppliers", resultUniqueSuppliers);
+
+//bodlogo18
+const getNameAndPriceList = (products) => {
+  const NameandPriceList = products.map((product) => {
+    return { name: product.name, price: product.price };
+  });
+  return NameandPriceList;
+};
+console.log("18", getNameAndPriceList(data));
+
+//bodlogo19
+
+const getHighlyRatedProducts = (products) => {
+  const HighRatedProduct = products.filter((product) => {
+    return product.rating > 4.5;
+  });
+  return HighRatedProduct;
+};
+console.log("19", getHighlyRatedProducts(data));
+
+//bodlogo20
+
+const addIdToProducts = (products) => {
+  const addId = products.map((product, i) => {
+    return {
+      ...product,
+      id: i + 1,
+    };
+  });
+  return addId;
+};
+console.log("19", addIdToProducts(data));

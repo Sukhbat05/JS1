@@ -255,7 +255,7 @@ const addFinalPrice = (products) => {
   });
   return newData;
 };
-console.log(addFinalPrice(data));
+console.log("8", addFinalPrice(data));
 
 //bodlogo9
 const getTopRatedProduct = (products) => {

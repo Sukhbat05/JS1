@@ -12,7 +12,7 @@ const render = () => {
     const li = document.createElement("li");
     li.innerText = element;
     ul.appendChild(li);
-  });
+    });
 };
 
 const input = document.createElement("input");
@@ -24,8 +24,8 @@ button.addEventListener("click", () => {
   render();
 });
 
-button.innerText = "click me";
+  button.innerText = "click me";
 
-body.className = "container";
+body.className = "container";  
 body.appendChild(input);
 body.appendChild(button);

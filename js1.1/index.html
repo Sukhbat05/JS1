@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const image = document.createElement("img");
+      image.src =
+        "https://www.vdm.ford.com/content/dam/na/ford/en_us/images/ranger/2025/jellybeans/Ford_Ranger_2025_300A_PE7_88B_89H_76E_16E_CAB_64H_RWD_99H_XLT_DEFAULT_EXT_4_002.png";
+      image.style.width = "500px";
+      const h1 = document.createElement("h1");
+      const body = document.getElementsByTagName("body")[0];
+      body.appendChild(image);
+      body.appendChild(h1);
+      h1.innerText = "1 Say$";
+      const div = document.createElement("div");
+      body.appendChild(div);
+      const p = document.createElement("p");
+      div.appendChild(p);
+      p.innerText = "Ford Ranger , 2020/2020";
+      p.style.fontSize = "25px";
+      const section = document.createElement("section");
+      div.appendChild(section);
+      section.innerText = "10000km, automat , 2.4l  ";
+      const footer = document.createElement("footer")
+      div.appendChild(footer);
+      footer.innerText = "haha"
+      footer.style.marginTop = "15px"
+
+     
+    </script>
+  </body>
+</html>

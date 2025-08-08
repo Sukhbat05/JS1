@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  display: flex;
+}
+
+.red {
+  background-color: red;
+  height: 100px;
+}
+
+.blue {
+  background-color: blue;
+  height: 100px;
+}
